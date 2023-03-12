@@ -19,4 +19,13 @@ export class NavigationComponent {
   openDialog() {
     this.dialog.open(ContactModalComponent);
   }
+
+  scrollTo(id: string) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToMobile(id: string) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
