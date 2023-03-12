@@ -1,0 +1,22 @@
+<div class="w-full flex flex-col justify-center items-center">
+  <div class="p-10 flex justify-center items-center flex-col max-w-7xl">
+    <h1 class="text-center text-3xl font-bold mt-5">SERVICES OFFERED</h1>
+
+    <div class="mt-5 flex flex-wrap flex-row gap-10 justify-center">
+      <mat-card
+        class="example-card shadow-lg transition-all ease-in-out duration-110 hover:scale-[105%] hover:bg-[#090a26] hover:text-white"
+        *ngFor="let service of services; let i = index"
+      >
+        <div class="p-4 flex text-center justify-center items-center">
+          <h1 class="text-md font-bold mt-3">{{service.name}}</h1>
+        </div>
+        <img mat-card-image [src]="service.url" class="w-full"/>
+        <mat-card-content class="flex text-center !py-5">
+          <p>
+            {{service.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

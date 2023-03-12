@@ -1,0 +1,45 @@
+<div class="w-full flex justify-center items-center flex-col p-10 bg-[#090a26] text-white">
+  <div class="max-w-3xl">
+    <h1 class="text-center text-3xl font-bold mt-5">OUR VALUES</h1>
+    <p class="mt-5 text-center">
+      Our core values represent our commitment to excellence, teamwork,
+      adaptability, and customer satisfaction. We believe that by living out
+      these values, we can achieve our goals, serve our customers better, and
+      make a positive impact in our communities. Take a few moments to learn
+      more about our core values and how they inform our actions and decisions
+      every day.
+    </p>
+  </div>
+  <cdk-accordion
+  multi="true"
+    class="example-accordion transition-all duration-150 ease-in-out mt-5 w-full"
+  >
+    <cdk-accordion-item
+      *ngFor="let item of items; let index = index"
+      #accordionItem="cdkAccordionItem"
+      class="example-accordion-item"
+      role="button"
+      tabindex="0"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index"
+    >
+      <div
+        class="example-accordion-item-header font-bold text-white"
+        (click)="accordionItem.toggle()"
+      >
+        {{ item }}
+        <mat-icon [fontIcon]="accordionItem.expanded ? 'remove' : 'add'" class="text-white font-bold"></mat-icon>
+      </div>
+      <div
+        class="example-accordion-item-body !px-10"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index"
+      >
+        {{ itemDescriptions[index] }}
+      </div>
+    </cdk-accordion-item>
+  </cdk-accordion>
+</div>
